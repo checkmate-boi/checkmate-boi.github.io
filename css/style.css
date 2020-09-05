@@ -1,0 +1,118 @@
+#navigation { text-align: center; }
+#navigation ul {
+  margin:auto;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    padding: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+    vertical-align: middle;
+}
+
+body {
+  color: white;
+  margin:10;
+  padding:10
+}
+
+
+a:hover, a:focus, a:active {
+    color: #999;
+    text-decoration: none;
+
+}
+
+/*nav font*/
+a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: color 0.1s, background-color 0.1s;
+}
+
+/*line below nav*/
+ul {
+  border-bottom: .5px solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/*logo*/
+ul img {
+  padding-right: 0px;
+}
+
+
+/*---social icons---*/
+
+
+/*------*/
+
+
+/*---underline---*/
+ul a {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 22px;
+    letter-spacing: 1px;
+    font-size: 22px;
+    line-height: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #ffffff;
+}
+
+a.item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+a:active::before {
+    background-color: #000;
+}
+a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+/*------*/
+
+/*---table---*/
+div.chlist {
+  width: 70%;
+  margin: auto;
+}
+
+table th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  color: #551980;
+}
+
+td, td a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #551980;
+    border-color: #551980;
+}
+
+td.date {
+  text-align: right;
+}
+/*---------*/

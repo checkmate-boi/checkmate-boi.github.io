@@ -24,10 +24,16 @@ body {
   height: relative;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 20px;
-  min-height: 530px;
+  /*min-height: 530px;*/
   max-width: 960px;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.tabs::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 @media only screen and (max-width: 870px) {

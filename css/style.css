@@ -4,15 +4,15 @@
 }
 
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    display: inline-block;
-    padding: 20px;
-    padding-right: 0px;
-    padding-left: 0px;
-    vertical-align: middle;
+  display: inline-block;
+  padding: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
+  vertical-align: middle;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
 
 
 a:hover, a:focus, a:active {
-    color: #999;
-    text-decoration: none;
+  color: #999;
+  text-decoration: none;
 }
 
 ul a:hover {
@@ -34,10 +34,10 @@ ul a:hover {
 
 /*nav font*/
 a {
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-    color: white;
-    transition: color 0.1s, background-color 0.1s;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: white;
+  transition: color 0.1s, background-color 0.1s;
 }
 
 /*line below nav*/
@@ -52,46 +52,46 @@ ul {
 ul img {
   padding-right: 0px;
   -webkit-filter: invert(1);
-   filter: invert(1);
+  filter: invert(1);
 }
 
 
 
 /*---underline---*/
 ul a {
-    position: relative;
-    display: block;
-    padding: 16px 0;
-    margin: 0 22px;
-    letter-spacing: 1px;
-    font-size: 22px;
-    line-height: 16px;
-    font-weight: 900;
-    text-transform: uppercase;
-    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-    color: #ffffff;
+  position: relative;
+  display: block;
+  padding: 16px 0;
+  margin: 0 22px;
+  letter-spacing: 1px;
+  font-size: 22px;
+  line-height: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+  color: #ffffff;
 }
 
 a.item::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: #ffffff;
-    transform-origin: right top;
-    transform: scale(0, 1);
-    transition: color 0.1s,transform 0.2s ease-out;
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: color 0.1s,transform 0.2s ease-out;
 }
 
 a:active::before {
-    background-color: #000;
+  background-color: #000;
 }
 a:hover::before, a:focus::before {
-    transform-origin: left top;
-    transform: scale(1, 1);
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 /*------*/
 
@@ -114,7 +114,8 @@ h1 {
 }
 
 .manga-cover-div {
-  width: 18em;
+  width: 100%;
+  max-width: 18em;
 }
 
 .manga-cover {
@@ -146,13 +147,14 @@ h1 {
   }
 
   .manga-cover-div {
-    float: none;
-    display: block;
     margin: 0 auto;
   }
 
-  .manga-cover {
-    float: center;
+  img.manga-cover {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto
+    display: block;
   }
 
   .tabs {
@@ -186,17 +188,17 @@ h1 {
 
 
   ul a {
-      position: relative;
-      display: block;
-      padding: 0px 0;
-      margin: 0px 15px;
-      letter-spacing: 1px;
-      font-size: 15px;
-      line-height: 35px;
-      font-weight: 900;
-      text-transform: uppercase;
-      transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-      color: #ffffff;
+    position: relative;
+    display: block;
+    padding: 0px 0;
+    margin: 0px 15px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 35px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #ffffff;
   }
 
   .nav-logo {
@@ -232,10 +234,10 @@ table th {
 }
 
 td, td a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #383838;
-    border-color: #383838;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #383838;
+  border-color: #383838;
 }
 
 td.date {

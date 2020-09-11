@@ -1,54 +1,49 @@
-function swipedetect(el, callback){
+// at least 100 px are a swipe
+// you can use the value relative to screen size: window.innerWidth * .1
+const offset = 100;
+let xDown, yDown
 
-    var touchsurface = el,
-    swipedir,
-    startX,
-    startY,
-    distX,
-    distY,
-    threshold = 150, //required min distance traveled to be considered swipe
-    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-    allowedTime = 300, // maximum time allowed to travel that distance
-    elapsedTime,
-    startTime,
-    handleswipe = callback || function(swipedir){}
+window.addEventListener('touchstart', e => {
+  const firstTouch = getTouch(e);
 
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        swipedir = 'none'
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() // record time when finger first makes contact with surface
-        e.preventDefault()
-    }, false)
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+});
 
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() // prevent scrolling when inside DIV
-    }, false)
+window.addEventListener('touchend', e => {
+  if (!xDown || !yDown) {
+    return;
+  }
 
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime // get time elapsed
-        if (elapsedTime <= allowedTime){ // first condition for awipe met
-            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-                swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-            }
-            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-            }
-        }
-        handleswipe(swipedir)
-        e.preventDefault()
-    }, false)
+  const {
+    clientX: xUp,
+    clientY: yUp
+  } = getTouch(e);
+  const xDiff = xDown - xUp;
+  const yDiff = yDown - yUp;
+  const xDiffAbs = Math.abs(xDown - xUp);
+  const yDiffAbs = Math.abs(yDown - yUp);
+
+  // at least <offset> are a swipe
+  if (Math.max(xDiffAbs, yDiffAbs) < offset ) {
+    return;
+  }
+
+  if (xDiffAbs > yDiffAbs) {
+    if ( xDiff > 0 ) {
+      plusSlides(1);
+    } else {
+      plusSlides(-1);
+    }
+  } else {
+    if ( yDiff > 0 ) {
+      //up
+    } else {
+      //down
+    }
+  }
+});
+
+function getTouch (e) {
+  return e.changedTouches[0]
 }
-
-
-var el = document.getElementById('someel')
-swipedetect(el, function(swipedir){
-    swipedir contains either "none", "left", "right", "top", or "down"
-    if (swipedir =='left')
-        alert('You just swiped left!')
-})

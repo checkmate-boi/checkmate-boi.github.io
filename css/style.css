@@ -80,7 +80,7 @@ a.item::before {
 }
 
 a:active::before {
-  background-color: #000;
+  background-color: #ffffff;
 }
 a:hover::before, a:focus::before {
   transform-origin: left top;

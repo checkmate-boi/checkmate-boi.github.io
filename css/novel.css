@@ -1,0 +1,63 @@
+.novel {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: relative;
+  background: white;
+
+  padding: 60px;
+
+
+  width: 100%;
+  height: relative;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  /*min-height: 530px;*/
+  max-width: 750px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.novel::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  border-radius: 3px 0 0 3px;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 870px) {
+  .tabs {
+    margin-top: 25px;
+    padding: 40px;
+    padding-bottom: 75px;
+  }
+
+  .novel {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 20px;
+    padding-top: 2em;
+  }
+
+}
